@@ -1,22 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Governance Proposal dApp
+
+This is a basic decentralized application (dApp) built with Next.js that allows users to connect their wallets, view existing governance proposals, and create new ones on the Sepolia testnet.
+
+## Smart Contract
+
+- **Network:** Sepolia Testnet
+- **Address:** `0xf2d17690cb47732604587c9650560e9ba2761cad`
+- **Etherscan:** [https://sepolia.etherscan.io/address/0xf2d17690cb47732604587c9650560e9ba2761cad#code](https://sepolia.etherscan.io/address/0xf2d17690cb47732604587c9650560e9ba2761cad#code)
+
+## Technologies Used
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Wallet Integration:** wagmi
+- **Wallet Connection UI:** RainbowKit
+- **Ethereum Interaction:** viem (used by wagmi)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or later recommended)
+- Yarn package manager
+- A crypto wallet extension in your browser (e.g., MetaMask) configured for the Sepolia testnet.
+- Sepolia ETH for gas fees (you can get some from a faucet).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repository:**
+    ```bash
+    git clone <your-repo-url>
+    cd <repo-directory>
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    yarn install
+    ```
+
+3.  **Set up Environment Variables:**
+    *   You need a WalletConnect Project ID for RainbowKit to function correctly.
+    *   Get a Project ID from [WalletConnect Cloud](https://cloud.walletconnect.com/).
+    *   Create a file named `.env.local` in the root of the project.
+    *   Add your Project ID to the file:
+        ```
+        NEXT_PUBLIC_WC_PROJECT_ID=YOUR_PROJECT_ID_HERE
+        ```
+
+### Running the dApp
+
+1.  **Start the development server:**
+    ```bash
+    yarn dev
+    ```
+
+2.  Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+
+3.  Connect your wallet using the "Connect Wallet" button.
+
+4.  You should now be able to view existing proposals and create new ones using the form.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
